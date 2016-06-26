@@ -50,6 +50,8 @@ public class SignIn extends AppCompatActivity {
                     }
                 });
 
+                myFirebaseRef.setValue("test");
+
                 myFirebaseRef.authWithPassword(mSignUpEmail.getText().toString(), mSignUpPassword.getText().toString(), new Firebase.AuthResultHandler() {
                     @Override
                     public void onAuthenticated(AuthData authData) {
