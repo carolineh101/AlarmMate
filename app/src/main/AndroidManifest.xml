@@ -17,7 +17,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CreateRoom"></activity>
+        <activity android:name=".CreateRoom" />
+        <activity android:name=".EnterTimes"></activity>
     </application>
 
 </manifest>
