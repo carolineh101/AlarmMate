@@ -55,6 +55,8 @@ public class CreateRoom extends AppCompatActivity {
 
                 Intent intent = new Intent(CreateRoom.this, EnterTimes.class);
                 intent.putExtra("name", name);
+                intent.putExtra("user", "1");
+                intent.putExtra("room", mNewRoom.getText().toString());
                 startActivity(intent);
             }
         };
@@ -71,6 +73,8 @@ public class CreateRoom extends AppCompatActivity {
 
                 Intent intent = new Intent(CreateRoom.this, EnterTimes.class);
                 intent.putExtra("name", name);
+                intent.putExtra("user", "2");
+                intent.putExtra("room", mRoomName.getText().toString());
                 startActivity(intent);
             }
         };
