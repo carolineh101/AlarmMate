@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "62841631866",
+    "firebase_url": "https://alarmmate-fa8d9.firebaseio.com",
+    "project_id": "alarmmate-fa8d9",
+    "storage_bucket": "alarmmate-fa8d9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:62841631866:android:e24f8b39acc87b4d",
+        "android_client_info": {
+          "package_name": "com.example.carolineho.alarmmate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "62841631866-cenlgduuufaquhs8k0cmvcjm9p5m3lg4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKl9hxEaFVad8RRVVospP8lrdhXqp6GE0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
