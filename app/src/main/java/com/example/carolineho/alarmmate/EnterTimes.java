@@ -131,7 +131,7 @@ public class EnterTimes extends AppCompatActivity {
                         mHour = selectedHour;
                         mMin = selectedMinute;
                         ArrayList<Integer> days = new ArrayList<>();
-                        days.add(0, SUNDAY);
+                        days.add(0, MONDAY);
                         Intent mAlarm = new Intent(AlarmClock.ACTION_SET_ALARM)
                                 .putExtra(AlarmClock.EXTRA_HOUR, mHour)
                                 .putExtra(AlarmClock.EXTRA_MINUTES, mMin)
@@ -359,7 +359,6 @@ public class EnterTimes extends AppCompatActivity {
                 mDatabase.child("rooms").child(room).child("user" + user).child("status").setValue("awake");
 
                 Intent intent = new Intent(EnterTimes.this, ScheduleStatus.class);
-                intent.putExtra("name", name);
                 intent.putExtra("user", user);
                 intent.putExtra("room", room);
                 startActivity(intent);

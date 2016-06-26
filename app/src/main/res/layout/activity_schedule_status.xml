@@ -19,15 +19,6 @@
         android:textAppearance="@android:style/TextAppearance.Material.Large"
         android:textStyle="normal|bold" />
 
-    <Button
-        android:text="I am going to sleep"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView4"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="36dp"
-        android:id="@+id/MySleepStatus" />
-
     <TextView
         android:text="Schedule"
         android:layout_width="wrap_content"
@@ -39,14 +30,63 @@
         android:layout_centerHorizontal="true" />
 
     <TextView
-        android:text="User2 is awake."
+        android:text="Your alarm is set for --:-- AM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/MySleepStatus"
+        android:layout_below="@+id/textView15"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="47dp"
-        android:id="@+id/TheirSleepStatus"
+        android:layout_marginTop="35dp"
+        android:id="@+id/MyAlarm"
         android:textAppearance="@android:style/TextAppearance.Material.Medium"
         android:textStyle="normal|bold" />
+
+    <TextView
+        android:text="Their alarm is set for --:-- AM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:id="@+id/TheirAlarm"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        android:textStyle="normal|bold"
+        android:layout_below="@+id/MyAlarm"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Disable Alarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TheirAlarm"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/Disable" />
+
+    <Button
+        android:text="Snooze Alarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/Snooze"
+        android:visibility="invisible" />
+
+    <TextView
+        android:text="User2 is awake"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TheirSleepStatus"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        android:textStyle="normal|bold"
+        android:layout_below="@+id/MySleepStatus"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp" />
+
+    <Button
+        android:text="I am going to sleep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/MySleepStatus"
+        android:layout_marginTop="31dp"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
