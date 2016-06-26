@@ -23,6 +23,7 @@ import java.util.Calendar;
 
 import static java.util.Calendar.FRIDAY;
 import static java.util.Calendar.MONDAY;
+import static java.util.Calendar.SUNDAY;
 import static java.util.Calendar.THURSDAY;
 import static java.util.Calendar.TUESDAY;
 import static java.util.Calendar.WEDNESDAY;
@@ -130,13 +131,14 @@ public class EnterTimes extends AppCompatActivity {
                         mHour = selectedHour;
                         mMin = selectedMinute;
                         ArrayList<Integer> days = new ArrayList<>();
-                        days.add(0, MONDAY);
+                        days.add(0, SUNDAY);
                         Intent mAlarm = new Intent(AlarmClock.ACTION_SET_ALARM)
                                 .putExtra(AlarmClock.EXTRA_HOUR, mHour)
                                 .putExtra(AlarmClock.EXTRA_MINUTES, mMin)
                                 .putExtra(AlarmClock.EXTRA_DAYS, days)
                                 .putExtra(AlarmClock.EXTRA_VIBRATE, true)
-                                .putExtra(AlarmClock.EXTRA_RINGTONE, "content://settings/system/alarm_alert");
+                                .putExtra(AlarmClock.EXTRA_RINGTONE, "content://settings/system/alarm_alert")
+                                .putExtra(AlarmClock.EXTRA_SKIP_UI, true);
                         if (mAlarm.resolveActivity(getPackageManager()) != null) {
                             startActivity(mAlarm);
                         }
@@ -184,7 +186,8 @@ public class EnterTimes extends AppCompatActivity {
                                 .putExtra(AlarmClock.EXTRA_MINUTES, tMin)
                                 .putExtra(AlarmClock.EXTRA_DAYS, days)
                                 .putExtra(AlarmClock.EXTRA_VIBRATE, true)
-                                .putExtra(AlarmClock.EXTRA_RINGTONE, "content://settings/system/alarm_alert");
+                                .putExtra(AlarmClock.EXTRA_RINGTONE, "content://settings/system/alarm_alert")
+                                .putExtra(AlarmClock.EXTRA_SKIP_UI, true);
                         if (tAlarm.resolveActivity(getPackageManager()) != null) {
                             startActivity(tAlarm);
                         }
@@ -232,7 +235,8 @@ public class EnterTimes extends AppCompatActivity {
                                 .putExtra(AlarmClock.EXTRA_MINUTES, wMin)
                                 .putExtra(AlarmClock.EXTRA_DAYS, days)
                                 .putExtra(AlarmClock.EXTRA_VIBRATE, true)
-                                .putExtra(AlarmClock.EXTRA_RINGTONE, "content://settings/system/alarm_alert");
+                                .putExtra(AlarmClock.EXTRA_RINGTONE, "content://settings/system/alarm_alert")
+                                .putExtra(AlarmClock.EXTRA_SKIP_UI, true);
                         if (wAlarm.resolveActivity(getPackageManager()) != null) {
                             startActivity(wAlarm);
                         }
@@ -280,7 +284,8 @@ public class EnterTimes extends AppCompatActivity {
                                 .putExtra(AlarmClock.EXTRA_MINUTES, thMin)
                                 .putExtra(AlarmClock.EXTRA_DAYS, days)
                                 .putExtra(AlarmClock.EXTRA_VIBRATE, true)
-                                .putExtra(AlarmClock.EXTRA_RINGTONE, "content://settings/system/alarm_alert");
+                                .putExtra(AlarmClock.EXTRA_RINGTONE, "content://settings/system/alarm_alert")
+                                .putExtra(AlarmClock.EXTRA_SKIP_UI, true);
                         if (thAlarm.resolveActivity(getPackageManager()) != null) {
                             startActivity(thAlarm);
                         }
@@ -328,7 +333,8 @@ public class EnterTimes extends AppCompatActivity {
                                 .putExtra(AlarmClock.EXTRA_MINUTES, fMin)
                                 .putExtra(AlarmClock.EXTRA_DAYS, days)
                                 .putExtra(AlarmClock.EXTRA_VIBRATE, true)
-                                .putExtra(AlarmClock.EXTRA_RINGTONE, "content://settings/system/alarm_alert");
+                                .putExtra(AlarmClock.EXTRA_RINGTONE, "content://settings/system/alarm_alert")
+                                .putExtra(AlarmClock.EXTRA_SKIP_UI, true);
                         if (fAlarm.resolveActivity(getPackageManager()) != null) {
                             startActivity(fAlarm);
                         }
@@ -350,10 +356,12 @@ public class EnterTimes extends AppCompatActivity {
                 mDatabase.child("rooms").child(room).child("user" + user).child("wednesday").setValue(mTimeW.getText().toString());
                 mDatabase.child("rooms").child(room).child("user" + user).child("thursday").setValue(mTimeTh.getText().toString());
                 mDatabase.child("rooms").child(room).child("user" + user).child("friday").setValue(mTimeF.getText().toString());
+                mDatabase.child("rooms").child(room).child("user" + user).child("status").setValue("awake");
 
-                Intent intent = new Intent(EnterTimes.this, EnterTimes.class);
+                Intent intent = new Intent(EnterTimes.this, ScheduleStatus.class);
                 intent.putExtra("name", name);
                 intent.putExtra("user", user);
+                intent.putExtra("room", room);
                 startActivity(intent);
             }
         };
